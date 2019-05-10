@@ -10,11 +10,23 @@ namespace TDD_Example.Models
         public Dollar(int amount)
         {
             this._amount = amount;
+            this._currency = "USD";
         }
 
-        public Dollar times(int multiplier)
+        public Dollar(int amount,string currency)
         {
-            return new Dollar(_amount * multiplier);
+            this._amount = amount;
+            this._currency = "USD";
+        }
+
+        public override Money times(int multiplier)
+        {
+            return Money.dollar(this._amount * multiplier);
+        }
+
+        public string currency()
+        {
+            return this._currency;
         }
 
     }

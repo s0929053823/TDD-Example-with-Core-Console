@@ -6,14 +6,27 @@ namespace TDD_Example.Models
 {
     public class Franc :Money
     {
+
         public Franc(int amount)
         {
             this._amount = amount;
+            this._currency = "CHF";
         }
 
-        public Franc times(int multiplier)
+        public Franc(int amount,string currency)
         {
-            return new Franc(_amount * multiplier);
+            this._amount = amount;
+            this._currency = "CHF";
+        }
+
+        public override Money times(int multiplier)
+        {
+            return Money.franc(this._amount * multiplier);
+        }
+
+        public string currency()
+        {
+            return this._currency;
         }
     }
 }
