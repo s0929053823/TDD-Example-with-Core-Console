@@ -24,8 +24,8 @@ namespace TDD_Test
         [TestMethod]
         public void TestCurrency()
         {
-            Assert.AreEqual("USD", Money.dollar(1).currency());
-            Assert.AreEqual("CHF", Money.franc(1).currency());
+            Assert.AreEqual("USD", Money.dollar(1).Currency);
+            Assert.AreEqual("CHF", Money.franc(1).Currency);
         }
 
         [TestMethod]

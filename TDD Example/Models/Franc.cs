@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TDD_Example.Models
+﻿namespace TDD_Example.Models
 {
     public class Franc :Money
     {

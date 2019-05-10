@@ -12,7 +12,7 @@ namespace TDD_Example.Models
 
         public string Currency => this._currency;
 
-        public Expression times(int multiplier)
+        public Expression Times(int multiplier)
         {
             return new Money(this._amount * multiplier, this._currency);
         }
@@ -37,17 +37,19 @@ namespace TDD_Example.Models
         public override bool Equals(Object obj)
         {
             Money money = (Money)obj;
-            return( _amount == money._amount&& this.currency().Equals(money.currency()));
+            return( _amount == money._amount&& this.Currency.Equals(money.Currency));
         }
 
-        public String currency()
-        {
-            return this._currency;
-        }
+
         public Money Reduce(Bank bank, String to)
         {
             int rate = bank.GetRate(this._currency, to);
             return new Money(this._amount / rate, to);
+        }
+
+        public Money()
+        {
+
         }
 
         public Money(int amount, string currency)

@@ -9,5 +9,6 @@ namespace TDD_Example.Interfaces
     {
         Money Reduce(Bank bank, String to);
         Expression Plus(Expression addend);
+        Expression Times(int multiplier);
     }
 }
