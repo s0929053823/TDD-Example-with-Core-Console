@@ -4,9 +4,8 @@ using System.Text;
 
 namespace TDD_Example.Models
 {
-    public class Dollar
+    public class Dollar : Money
     {
-        private int _amount;
 
         public Dollar(int amount)
         {
@@ -18,10 +17,5 @@ namespace TDD_Example.Models
             return new Dollar(_amount * multiplier);
         }
 
-        public override bool Equals(Object obj)
-        {
-            Dollar dollar = (Dollar)obj;
-            return _amount == dollar._amount;
-        }
     }
 }
