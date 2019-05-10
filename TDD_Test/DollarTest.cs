@@ -8,11 +8,9 @@ namespace TDD_Test
         [TestMethod]
         public void TestMultiplication()
         {
-            Dollar five = new Dollar(5);
-            Dollar product = five.times(2);
-            Assert.AreEqual(new Dollar(10), product);
-            product = five.times(3);
-            Assert.AreEqual(new Dollar(15), product);
+            Money five = Money.dollar(5);
+            Assert.AreEqual(new Dollar(10), five.times(2));
+            Assert.AreEqual(new Dollar(15), five.times(3));
         }
 
         [TestMethod]
