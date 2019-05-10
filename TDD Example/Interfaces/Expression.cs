@@ -7,6 +7,6 @@ namespace TDD_Example.Interfaces
 {
     public interface Expression
     {
-        Money reduce(Bank bank, String to);
+        Money Reduce(Bank bank, String to);
     }
 }

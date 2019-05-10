@@ -17,10 +17,10 @@ namespace TDD_Example.Models
            
         }
 
-        public override Money times(int multiplier)
-        {
-            return Money.dollar(this._amount * multiplier);
-        }
+        //public override Expression times(int multiplier)
+        //{
+        //    return Money.dollar(this._amount * multiplier);
+        //}
 
         public string currency()
         {

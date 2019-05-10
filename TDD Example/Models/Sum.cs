@@ -7,17 +7,21 @@ namespace TDD_Example.Models
 {
     public class Sum : Expression
     {
-        public Money augend, addend;
+        private Expression augend, addend;
 
-        public Sum(Money augend, Money addend)
+        public Expression Augend => this.augend;
+        public Expression Addend => this.addend;
+
+
+        public Sum(Expression augend, Expression addend)
         {
             this.augend = augend;
             this.addend = addend;
         }
 
-        public Money reduce(Bank bank, String to)
+        public Money Reduce(Bank bank, String to)
         {
-            int amount = augend.Amount + addend.Amount;
+            int amount = augend.Reduce(bank,to).Amount + addend.Reduce(bank,to).Amount;
             return new Money(amount, to);
         }
     }

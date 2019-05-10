@@ -8,15 +8,20 @@ namespace TDD_Example.Models
         protected int _amount;
         protected string _currency;
 
-        public int Amount { get => this._amount; }
+        public int Amount => this._amount;
 
-        public string Currency { get => this._currency; }
+        public string Currency => this._currency;
 
-        public virtual Money times(int multiplier)
+        public Expression times(int multiplier)
         {
-            return null;
+            return new Money(this._amount * multiplier, this._currency);
         }
-     
+
+        public Expression Plus(Expression addend)
+        {
+            return new Sum(this, addend);
+        }
+
 
         public static Money dollar(int amount)
         {
@@ -39,7 +44,7 @@ namespace TDD_Example.Models
         {
             return this._currency;
         }
-        public Money reduce(Bank bank, String to)
+        public Money Reduce(Bank bank, String to)
         {
             int rate = bank.GetRate(this._currency, to);
             return new Money(this._amount / rate, to);
@@ -51,12 +56,7 @@ namespace TDD_Example.Models
             this._currency = currency;
         }
 
-
-        public Expression plus(Money addend)
-        {
-            return new Sum(this, addend);
-        }
-
+   
         //For Debug
         public String toString()
         {

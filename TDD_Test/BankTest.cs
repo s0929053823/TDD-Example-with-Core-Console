@@ -17,10 +17,10 @@ namespace TDD_Test
         public void TestIdentityRate()
         {
             Bank bank = new Bank();
-            Assert.AreEqual(1, new Bank().GetRate("USD", "USD"));
+            Assert.AreEqual(1, bank.GetRate("USD", "USD"));
 
             bank.AddRate("CHF", "USD", 2);
-            Assert.AreEqual(2, new Bank().GetRate("CHF", "USD"));
+            Assert.AreEqual(2, bank.GetRate("CHF", "USD"));
 
         }
 
