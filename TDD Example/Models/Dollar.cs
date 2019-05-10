@@ -22,10 +22,6 @@ namespace TDD_Example.Models
         //    return Money.dollar(this._amount * multiplier);
         //}
 
-        public string currency()
-        {
-            return this._currency;
-        }
 
     }
 }

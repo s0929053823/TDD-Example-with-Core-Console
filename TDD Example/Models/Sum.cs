@@ -24,5 +24,9 @@ namespace TDD_Example.Models
             int amount = augend.Reduce(bank,to).Amount + addend.Reduce(bank,to).Amount;
             return new Money(amount, to);
         }
+        public Expression Plus(Expression addend)
+        {
+            return null;
+        }
     }
 }

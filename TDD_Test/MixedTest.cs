@@ -9,7 +9,7 @@ namespace TDD_Test
         [TestMethod]
         public void TestMixedAddition()
         {
-            Money fiveBucks = Money.dollar(5);
+            Expression fiveBucks = Money.dollar(5);
             Expression tenFrancs = Money.franc(10);
             Bank bank = new Bank();
             bank.AddRate("CHF", "USD", 2);

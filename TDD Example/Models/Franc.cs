@@ -17,14 +17,5 @@ namespace TDD_Example.Models
             
         }
 
-        //public override Expression times(int multiplier)
-        //{
-        //    return Money.franc(this._amount * multiplier);
-        //}
-
-        public string currency()
-        {
-            return this._currency;
-        }
     }
 }
