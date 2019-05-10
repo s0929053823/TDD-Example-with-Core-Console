@@ -7,16 +7,14 @@ namespace TDD_Example.Models
     public class Dollar : Money
     {
 
-        public Dollar(int amount)
+        public Dollar(int amount) : base(amount,"USD")
         {
-            this._amount = amount;
-            this._currency = "USD";
+         
         }
 
-        public Dollar(int amount,string currency)
+        public Dollar(int amount,string currency) : base(amount, "USD")
         {
-            this._amount = amount;
-            this._currency = "USD";
+           
         }
 
         public override Money times(int multiplier)

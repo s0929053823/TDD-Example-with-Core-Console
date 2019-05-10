@@ -4,30 +4,8 @@ using TDD_Example.Models;
 namespace TDD_Test
 {
     [TestClass]
-    public class MoneyTest
+    public class ExpressionTest
     {
-        [TestMethod]
-        public void TestEquality()
-        {
-            Assert.IsTrue(Money.dollar(5).Equals(Money.dollar(5)));
-            Assert.IsFalse(Money.dollar(5).Equals(Money.dollar(6)));
-            Assert.IsFalse(Money.franc(5).Equals(Money.franc(6)));
-        }
-
-        [TestMethod]
-        public void TestDifferentClassEquality()
-        {
-            Assert.IsFalse(new Franc(5).Equals(Money.dollar(5)));
-            Assert.IsFalse(new Franc(5).Equals(Money.dollar(5)));
-        }
-
-        [TestMethod]
-        public void TestCurrency()
-        {
-            Assert.AreEqual("USD", Money.dollar(1).currency());
-            Assert.AreEqual("CHF", Money.franc(1).currency());
-        }
-
         [TestMethod]
         public void TestSimpleAddition()
         {

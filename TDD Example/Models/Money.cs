@@ -1,14 +1,21 @@
 ﻿using System;
+using TDD_Example.Interfaces;
 
 namespace TDD_Example.Models
 {
-    public abstract class Money
+    public class Money : Expression
     {
         protected int _amount;
         protected string _currency;
 
+        public int Amount { get => this._amount; }
 
-        public abstract Money times(int multiplier);
+        public string Currency { get => this._currency; }
+
+        public virtual Money times(int multiplier)
+        {
+            return null;
+        }
      
 
         public static Money dollar(int amount)
@@ -32,12 +39,31 @@ namespace TDD_Example.Models
         {
             return this._currency;
         }
+        public Money reduce(Bank bank, String to)
+        {
+            int rate = bank.GetRate(this._currency, to);
+            return new Money(this._amount / rate, to);
+        }
+
+        public Money(int amount, string currency)
+        {
+            this._amount = amount;
+            this._currency = currency;
+        }
+
+
+        public Expression plus(Money addend)
+        {
+            return new Sum(this, addend);
+        }
 
         //For Debug
         public String toString()
         {
             return this._amount + " " + this._currency;
         }
+
+
     }
 
   
