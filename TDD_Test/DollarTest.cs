@@ -3,7 +3,7 @@ using TDD_Example.Models;
 namespace TDD_Test
 {
     [TestClass]
-    public class MoneyTest
+    public class DollarTest
     {
         [TestMethod]
         public void TestMultiplication()

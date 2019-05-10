@@ -1,4 +1,5 @@
 ﻿using System;
+using TDD_Example.Models;
 
 namespace TDD_Example
 {
