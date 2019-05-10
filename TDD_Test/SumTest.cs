@@ -4,17 +4,18 @@ using TDD_Example.Models;
 namespace TDD_Test
 {
     [TestClass]
-    public class MixedTest
-    { 
+    public class SumTest
+    {
         [TestMethod]
-        public void TestMixedAddition()
+        public void TestSumPlusMoney()
         {
             Expression fiveBucks = Money.dollar(5);
             Expression tenFrancs = Money.franc(10);
             Bank bank = new Bank();
             bank.AddRate("CHF", "USD", 2);
-            Money result = bank.Reduce(fiveBucks.Plus(tenFrancs), "USD");
-            Assert.AreEqual(Money.dollar(10), result);
+            Expression sum = new Sum(fiveBucks, tenFrancs).Plus(fiveBucks);
+            Money result = bank.Reduce(sum, "USD");
+            Assert.AreEqual(Money.dollar(15), result);
         }
     }
 
